@@ -21,7 +21,9 @@ def home():
             "GET /users/<id> - Belirli kullanıcıyı getir",
             "POST /users - Yeni kullanıcı ekle",
             "PUT /users/<id> - Kullanıcı güncelle",
-            "DELETE /users/<id> - Kullanıcı sil"
+            "DELETE /users/<id> - Kullanıcı sil",
+            "GET /stats - Kullanıcı istatistikleri",
+            "GET /health - Sistem durumu"
         ]
     })
 
@@ -74,6 +76,21 @@ def delete_user(user_id):
     
     users = [u for u in users if u["id"] != user_id]
     return jsonify({"message": "Kullanıcı silindi"})
+
+@app.route('/stats', methods=['GET'])
+def get_stats():
+    total_users = len(users)
+    email_domains = {}
+    for user in users:
+        domain = user["email"].split("@")[1]
+        email_domains[domain] = email_domains.get(domain, 0) + 1
+    
+    return jsonify({
+        "total_users": total_users,
+        "email_domains": email_domains,
+        "latest_user": users[-1] if users else None,
+        "timestamp": datetime.now().isoformat()
+    })
 
 @app.route('/health', methods=['GET'])
 def health_check():

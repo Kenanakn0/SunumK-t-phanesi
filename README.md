@@ -28,6 +28,9 @@ API http://localhost:5000 adresinde çalışacaktır.
 - **PUT** `/users/<id>` - Kullanıcı bilgilerini günceller
 - **DELETE** `/users/<id>` - Kullanıcıyı siler
 
+### İstatistikler
+- **GET** `/stats` - Kullanıcı istatistiklerini gösterir (toplam sayı, email domainleri, son kullanıcı)
+
 ### Sistem
 - **GET** `/health` - API durumunu kontrol eder
 
@@ -55,6 +58,11 @@ curl -X PUT http://localhost:5000/users/1 \
 ### Kullanıcı sil
 ```bash
 curl -X DELETE http://localhost:5000/users/1
+```
+
+### İstatistikleri görüntüle
+```bash
+curl http://localhost:5000/stats
 ```
 
 ## Test

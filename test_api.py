@@ -33,7 +33,12 @@ def test_api():
     print(f"Status: {response.status_code}")
     print(f"Response: {json.dumps(response.json(), indent=2, ensure_ascii=False)}\n")
     
-    print("6. Health check:")
+    print("6. İstatistikleri görüntüle:")
+    response = requests.get(f"{BASE_URL}/stats")
+    print(f"Status: {response.status_code}")
+    print(f"Response: {json.dumps(response.json(), indent=2, ensure_ascii=False)}\n")
+    
+    print("7. Health check:")
     response = requests.get(f"{BASE_URL}/health")
     print(f"Status: {response.status_code}")
     print(f"Response: {json.dumps(response.json(), indent=2, ensure_ascii=False)}\n")
