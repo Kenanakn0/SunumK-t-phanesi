@@ -6,7 +6,9 @@ app = Flask(__name__)
 users = [
     {"id": 1, "name": "Ahmet Yılmaz", "email": "ahmet@example.com"},
     {"id": 2, "name": "Ayşe Demir", "email": "ayse@example.com"},
-    {"id": 3, "name": "Mehmet Kaya", "email": "mehmet@example.com"}
+    {"id": 3, "name": "Mehmet Kaya", "email": "mehmet@example.com"},
+    {"id": 4, "name": "Halil Kaya", "email": "halil@example.com"}
+
 ]
 
 @app.route('/', methods=['GET'])
@@ -83,3 +85,4 @@ def health_check():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
