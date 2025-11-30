@@ -8,7 +8,8 @@ users = [
     {"id": 2, "name": "Ayşe Demir", "email": "ayse@example.com"},
     {"id": 3, "name": "Mehmet Kaya", "email": "mehmet@example.com"},
     {"id": 4, "name": "Halil Kaya", "email": "halil@example.com"},
-    {"id": 5, "name": "Jiyan Kaya", "email": "Jiyan@example.com"}
+    {"id": 5, "name": "Jiyan Kaya", "email": "Jiyan@example.com"},
+    {"id": 6, "name": "Fatih Kaya", "email": "Jiyan@example.com"}
 
 ]
 
